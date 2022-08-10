@@ -1,0 +1,79 @@
+.container {
+  background-color: white;
+  height: 53px;
+  padding: 0px 25px 0px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.content {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.pointer {
+  cursor: pointer;
+}
+.searchBox {
+  margin-left: 7px;
+  position: relative;
+  width: 401px;
+}
+.inputText {
+  padding-left: 40px;
+  background-color: #eef3f8;
+  height: 34px;
+  width: 280px;
+  border-radius: 6px;
+  border: none;
+  line-height: 1.75;
+  font-weight: 400;
+  font-size: 14px;
+}
+.searchIcon {
+  position: absolute;
+  top: 25%;
+  left: 15px;
+}
+.text_icon {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+.text_iconSelect {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+.containerIcon {
+  cursor: pointer;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.containerIconSearch {
+  cursor: pointer;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.reflectIcon {
+  transform: scaleX(-1);
+}
+@media (max-width: 1025px) {
+  .containerIconSearch {
+    display: flex;
+  }
+  .searchBox {
+    display: none;
+  }
+}

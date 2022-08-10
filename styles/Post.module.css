@@ -1,0 +1,84 @@
+.cardFeed {
+  margin-bottom: 8px;
+  border-radius: 12.8px;
+  background-color: white;
+  width: 100%;
+  min-width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+.post {
+  padding: 8px 16px 4px 16px;
+}
+.profilePhoto {
+  border-radius: 60px;
+  border: 1px solid #fff !important;
+}
+.createPostButton {
+  width: 100%;
+  margin-left: 10px;
+  background-color: #fff;
+  padding: 10px 8px 10px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 550;
+  font-size: 14.5px;
+  text-align: left;
+}
+.containerPostButton {
+  margin-top: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 0.4rem;
+}
+.containerPostButton p {
+  margin: 0;
+}
+.containerPostButton > button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center !important;
+}
+.w100 {
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.textPostProfile {
+  margin: 0 0 0 10px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nametPostProfile {
+  margin: 0 0 0 10px;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 17px;
+}
+.publishedContent {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 19px;
+}
+.reactionsContent {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.uploadedPhotoContainer {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+.uploadedPhoto {
+  margin-left: -12px;
+}
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
