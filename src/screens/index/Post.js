@@ -61,12 +61,10 @@ const Post = ({ item, dispatch }) => {
       </div>
       {image && (
         <div className={styles.uploadedPhotoContainer}>
-          <Image
+          <img
             src={image}
             alt="image uploaded"
-            layout="responsive"
-            width={"100%"}
-            height={"100%"}
+            width="100%"
             className={styles.uploadedPhoto}
           />
         </div>

@@ -15,12 +15,12 @@ import { types } from "../context/PostsReducer";
 import generateId from "../helpers/generateId";
 import moment from "moment";
 
-const Modal = ({ setIsOpen = () => {}, dispatch }) => {
+const Modal = ({ setIsOpen = () => {}, dispatch, initAddImage = false }) => {
   const [values, setValues] = useState({
     description: "",
     image: "",
   });
-  const [addImage, setAddImage] = useState(false);
+  const [addImage, setAddImage] = useState(initAddImage);
   const fileInputRef = useRef(null);
   const onChange = ({ target }) => {
     const { name, value } = target;
@@ -54,7 +54,7 @@ const Modal = ({ setIsOpen = () => {}, dispatch }) => {
     });
   };
   const savePost = () => {
-    if (values.description) {
+    if (values.description || values?.image) {
       const today = moment();
       addpost(today, values.description, values.image);
       setIsOpen(false);
@@ -98,15 +98,14 @@ const Modal = ({ setIsOpen = () => {}, dispatch }) => {
                 </div>
               </div>
               <div className={styles.inputTextContainer}>
-                {!addImage ? (
-                  <textarea
-                    name="description"
-                    value={values.description}
-                    className={styles.inputText}
-                    placeholder="¿Sobre qué quieres hablar?"
-                    onChange={onChange}
-                  />
-                ) : (
+                <textarea
+                  name="description"
+                  value={values.description}
+                  className={styles.inputText}
+                  placeholder="¿Sobre qué quieres hablar?"
+                  onChange={onChange}
+                />
+                {addImage && (
                   <div>
                     <div className={styles.inputFile} onClick={addFile}>
                       <input
@@ -182,7 +181,7 @@ const Modal = ({ setIsOpen = () => {}, dispatch }) => {
                     style={{ borderRadius: "29px", height: "30px" }}
                   />
                   <Button
-                    disabled={!values.description}
+                    disabled={!values.description && !values?.image}
                     onClick={savePost}
                     text="Publicar"
                     color="#0a66c2"

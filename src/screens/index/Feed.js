@@ -12,6 +12,7 @@ import Button from "../../components/Button";
 const Feed = () => {
   const [store, dispatch] = useContext(PostsContext);
   const [openModal, setOpenModal] = useState(false);
+  const [addImage, setAddImage] = useState(false);
   const [isDescendingOrder, setIsDescendingOrder] = useState(true);
   const [postsRender, setPostsRender] = useState({
     ascendant: [],
@@ -24,6 +25,11 @@ const Feed = () => {
       descendant: [...store?.posts].reverse(),
     });
   }, [store]);
+
+  useEffect(() => {
+    !openModal && setAddImage(false);
+  }, [openModal]);
+
   console.log(postsRender);
   return (
     <div className={`${styles.columnFeed}`}>
@@ -49,6 +55,10 @@ const Feed = () => {
           <ButtonIcon
             value={<MdInsertPhoto size={24} color="#0a66c2" />}
             text="Foto"
+            onClick={() => {
+              setAddImage(true);
+              setOpenModal(true);
+            }}
           />{" "}
           <ButtonIcon
             value={<BsYoutube size={24} color="#5f9b41" />}
@@ -87,7 +97,13 @@ const Feed = () => {
         : postsRender.ascendant.map((item) => (
             <Post key={item.id} item={item} dispatch={dispatch} />
           ))}
-      {openModal && <Modal setIsOpen={setOpenModal} dispatch={dispatch} />}
+      {openModal && (
+        <Modal
+          setIsOpen={setOpenModal}
+          dispatch={dispatch}
+          initAddImage={addImage}
+        />
+      )}
     </div>
   );
 };

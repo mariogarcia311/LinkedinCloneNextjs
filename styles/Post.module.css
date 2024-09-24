@@ -76,7 +76,7 @@
   margin-right: -16px;
 }
 .uploadedPhoto {
-  margin-left: -12px;
+  object-fit: contain;
 }
 .spaceBetween {
   display: flex;
